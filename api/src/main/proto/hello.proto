@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.cdodi";
+//option java_outer_classname = "GreetingService";
+
+service HelloService {
+  rpc sayHelloTo(Person) returns(Answer);
+  rpc answerToHello(Void) returns(Answer);
+}
+
+message Void {};
+
+message Person {
+  string name = 1;
+}
+
+message Answer {
+  string msg = 1;
+}
